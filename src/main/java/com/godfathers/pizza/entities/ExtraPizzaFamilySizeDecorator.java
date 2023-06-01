@@ -17,7 +17,10 @@ public class ExtraPizzaFamilySizeDecorator extends ExtraPizzaDecorator{
         super("Family Size",4.15, 1.95);
         this.decoratedPizza = pizza;
     }
-
+    @Override
+    public Double getCalories() {
+        return decoratedPizza.getCalories() * this.calories;
+    }
     public String print() {
         return "{" +
                 "name=Extra Family Size"  +

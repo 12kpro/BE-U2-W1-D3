@@ -21,6 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @ToString
 @NoArgsConstructor
+
+//@PropertySource("classpath:application.properties")
 public class Order {
 	private UUID orderNumber = UUID.randomUUID();
 	private Double totalPrice;
@@ -39,7 +41,7 @@ public class Order {
 
 	// @PostConstruct
 	public void orderTotal() {
-		log.info(this.seatPrice);
+		//log.info(this.seatPrice);
 		Double seatsPrice = this.tableRef.getSeats() * Double.parseDouble(this.seatPrice);
 
 		double totalAmount = 0;

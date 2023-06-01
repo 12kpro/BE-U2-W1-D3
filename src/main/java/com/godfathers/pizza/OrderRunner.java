@@ -1,10 +1,7 @@
 package com.godfathers.pizza;
 
 import com.godfathers.pizza.config.OrdinationConfig;
-import com.godfathers.pizza.entities.Consumation;
-import com.godfathers.pizza.entities.Order;
-import com.godfathers.pizza.entities.Ordination;
-import com.godfathers.pizza.entities.Table;
+import com.godfathers.pizza.entities.*;
 import com.godfathers.pizza.utils.OrderState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -31,6 +28,8 @@ public class OrderRunner implements CommandLineRunner {
 //        tables.get(0).setRef("A1");
 //        tables.get(0).setSeats(4);
 //        tables.add((Table) ctx.getBean("table"));
+//        tables.get(1).setRef("A2");
+//        tables.get(1).setSeats(5);
 //         tables.forEach(table -> log.info(table.toString()));
 
         //************** ordinazione 1 *************//
@@ -54,8 +53,8 @@ public class OrderRunner implements CommandLineRunner {
 
         ordinations.forEach(ordination -> log.info(ordination.toString()));
 
-        Table t1 = (Table) ctx.getBean("table");
-        t1.setSeats(3);
+        Table t1 = (Table) ctx.getBean("table_A1");
+        t1.setOccupiedPlaces(3);
         t1.setFree(false);
 
         Order o1 = (Order) ctx.getBean("order");
